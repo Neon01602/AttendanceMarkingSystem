@@ -1,39 +1,23 @@
-# Creating database 
-# It captures images and stores them in datasets 
 # folder under the folder name of sub_data 
 import cv2
 import numpy as np
-
 import os
 
 
 haar_file = 'haarcascade_frontalface_default.xml'
 face_cascade = cv2.CascadeClassifier(haar_file) 
-
 # All the faces data will be present this folder 
 datasets = "Enter your dataset folder location here"
-
-
-
 # These are sub data sets of folder, 
 # All datasets can be trained for any person by using his folder name
 # change the name here 
 sub_data = input("Enter the name of the person to train his data:")
 webcam = cv2.VideoCapture(0)
-
 path = os.path.join(datasets, sub_data) 
 if not os.path.isdir(path): 
 	os.mkdir(path)
-# Create a face recognizer object
-
-
 # defining the size of images 
 (width, height) = (130, 100)	 
-
-#'0' is used for webcam, 
-
- 
-
 # The program loops until it has 30 images of the face. 
 count = 1
 while count < 120: 
